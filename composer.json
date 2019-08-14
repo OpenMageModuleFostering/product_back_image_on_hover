@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Product_Back_Image_On_Hover",
+    "type": "magento-module",
+    "license": "OSLv3.0",
+    "homepage": "",
+    "description": "A Perfect solution to showcase product back image on category product listing pages.",
+    "authors": [
+    {
+        "name": "SetuBridge",
+        "email": "support@setubridge.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

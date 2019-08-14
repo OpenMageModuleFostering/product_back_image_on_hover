@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package>
+    <name>Product_Back_Image_On_Hover</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license>OSLv3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>A Perfect solution to showcase product back image on category product listing pages.</summary>
+    <description>&lt;h3&gt;A Perfect solution to showcase product back image on category product listing pages. &lt;/h3&gt;&#xD;
+&#xD;
+With online shopping perfect showcase of your catalog is must necessarily outstanding to increase sales &amp; user experience. We setubridge has right solution for merchant who wants to display products back image on category listing page. Our extension will seamlessly add functionality to display back product image on product image hover action by customer. Additionally you can control same functionality for upsell, cross sell &amp; related products by option control in backend configuration.&#xD;
+&#xD;
+&lt;h3&gt;Extension Features&lt;/h3&gt;&#xD;
+&lt;li&gt;Display back image when customer hover on product image&lt;/li&gt;&#xD;
+&lt;li&gt;Complete Configuration panel to control extension working from admin panel&lt;/li&gt;&#xD;
+&lt;li&gt;Enable back hover image functionality for related,upsell &amp; cross sell products using backend configuration&lt;/li&gt;&#xD;
+&#xD;
+&#xD;
+&lt;h3&gt;Technical Standards&lt;/h3&gt;&#xD;
+&lt;li&gt;Follow Extension Development guideline&lt;/li&gt;&#xD;
+&lt;li&gt;No Additional changes required for extension to work&lt;/li&gt;&#xD;
+&lt;li&gt;Direct filter in Moreviews to load back button image rather than ugly looping concept&lt;/li&gt;</description>
+    <notes>First Release.</notes>
+    <authors><author><name>SetuBridge</name><user>Technolabs</user><email>support@setubridge.com</email></author></authors>
+    <date>2014-03-11</date>
+    <time>13:01:12</time>
+    <contents><target name="magelocal"><dir name="Sbridge"><dir name="Moreview"><dir name="Block"><dir name="Adminhtml"><dir name="Moreview"><dir name="Edit"><file name="Form.php" hash="499c477c4f7203c45d3f42ac174a845e"/><dir name="Tab"><file name="Form.php" hash="75347900018be00a3c041acb225a49e4"/></dir><file name="Tabs.php" hash="6b6ea5e3b70b8da392356c1b548e22a0"/></dir><file name="Edit.php" hash="cbf23091ef62105463f6e9dd1b55c32d"/><file name="Grid.php" hash="886348b4099b35ba3a2a03040466eb90"/></dir><file name="Moreview.php" hash="298206490393fe1de57ca978a00c8862"/></dir><file name="Moreview.php" hash="2dbfd160019e12b750a2d528736641f0"/></dir><dir name="Helper"><file name="Data.php" hash="77ad595320752f10a30b61bf5e723e19"/></dir><dir name="Model"><file name="Moreview.php" hash="50c45b71fe1afd1251b8c1ffc2ebab9d"/><dir name="Mysql4"><dir name="Moreview"><file name="Collection.php" hash="861ae53362636821496f143a6d30afe6"/></dir><file name="Moreview.php" hash="46b2cbbdb8ca27bb183a252caffb77ad"/></dir><file name="Status.php" hash="9a30e9ac179eb578fa968c8239d1537d"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="MoreviewController.php" hash="84754802778f1983da620879806206a4"/></dir><file name="IndexController.php" hash="062e025896b8de25acd2fd0d65d55cc0"/></dir><dir name="etc"><file name="adminhtml.xml" hash="9ca45088d0dace9cf8d193acf2e305b8"/><file name="config.xml" hash="2bc79dce1cbe5a44b0c3688de029c6fb"/><file name="system.xml" hash="433e8b49833d8e58c4786968932ba5d3"/></dir><dir name="sql"><dir name="moreview_setup"><file name="mysql4-install-0.1.0.php" hash="792f43ddc7894dd9f39a7472ed135c7f"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="template"><dir name="moreview"><file name="crosssell.phtml" hash="7bc6d54dd7db3d2d271198d024caa0c8"/><file name="list.phtml" hash="b1b1d3a45f12bbe4089093d27a1cc575"/><file name="moreview.phtml" hash="a1722fdcb91f8cc555e54c8fb12ce6e6"/><file name="related.phtml" hash="e44796becd9dcae45f815f3915e4f5cc"/><file name="upsell.phtml" hash="e973ba07390da41b2756a4d914dd9c79"/></dir></dir><dir name="layout"><file name="moreview.xml" hash="be6025c7926bc5cc2a94c5a756db1d72"/></dir></dir></dir></dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="moreview.xml" hash="1e81c54dc590a17f70063a4529383a98"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Sbridge_Moreview.xml" hash="7a70ff4f71a279ab47f34b46de09ec16"/></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><file name="moreview.css" hash="ecc5ddad78877b293b4cce18fada5c7f"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
