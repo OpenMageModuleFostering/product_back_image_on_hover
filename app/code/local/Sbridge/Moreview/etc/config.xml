@@ -10,7 +10,7 @@
 <config>
     <modules>
         <Sbridge_Moreview>
-            <version>1.0.5</version>
+            <version>1.0.6</version>
         </Sbridge_Moreview>
     </modules>
     <frontend>
@@ -33,15 +33,16 @@
     </frontend>
     <admin>
         <routers>
-            <moreview>
-                <use>admin</use>
-                <args>
-                    <module>Sbridge_Moreview</module>
-                    <frontName>moreview</frontName>
-                </args>
-            </moreview>
+            <adminhtml>
+                <args> 
+                    <modules>
+                            <moreview_admin after="Mage_Adminhtml">Sbridge_Moreview_Adminhtml</moreview_admin> 
+                    </modules>
+               </args> 
+            </adminhtml> 
         </routers>
-    </admin>  
+    </admin>
+      
     <adminhtml>
         <acl>
             <resources>
