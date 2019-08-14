@@ -10,7 +10,7 @@
 <config>
     <modules>
         <Sbridge_Moreview>
-            <version>0.1.0</version>
+            <version>1.0.4</version>
         </Sbridge_Moreview>
     </modules>
     <frontend>
@@ -49,13 +49,21 @@
                     <title>Allow Everything</title>
                 </all>
                 <admin>
-                    <children>
-                        <Sbridge_Moreview>
-                            <title>Moreview</title>
-                            <sort_order>10</sort_order>
-                        </Sbridge_Moreview>
-                    </children>
-                </admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <moreview_section translate="title" module="moreview">
+                                        <title>moreview</title>
+                                        <sort_order>100</sort_order>
+                                    </moreview_section>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                 </children>
+            </admin>
             </resources>
         </acl>
         <layout>
