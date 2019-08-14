@@ -8,7 +8,7 @@
 ?>
 <?php
     $config = Mage::getStoreConfig('moreview_section/general_group/module_moreview');
-    if($config): 
+    if($config):  
         $_helper = $this->helper('catalog/output');
         $_product=$this->getProduct();
         $imagesCount = Mage::getModel('catalog/product')->load($_product->getId())->getMediaGalleryImages();
@@ -19,20 +19,12 @@
                 if($isResize):
                     $_imgSize=Mage::getStoreConfig('moreview_section/general_group/resize_moreview_width');
                     else:
-                    $_imgSize = 210;
+                    $_imgSize = 135;
                     endif;
 
-                $moreviewhtmlid='sbmoreviewinnerhtml-'.$_product->getId();
             ?>
-            <p id="<?php echo $moreviewhtmlid ?>">
-                <img class="sbmoreview" id="sbmoreview-<?php echo $_product->getId() ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_images->getFile())->resize($_imgSize); ?>" alt="<?php echo $this->htmlEscape($_images->getLabel());?>" title="<?php $this->htmlEscape($_images->getLabel());?>"/>
-            </p>
-            <script type="text/javascript">
-                var imgid="<?php echo "product-collection-image-".$_product->getId() ?>";
-                var data=$('<?Php echo $moreviewhtmlid ?>').innerHTML;
-                $(imgid).addClassName("sbview");
-                new Insertion.Before(imgid,data);
-            </script>
-            <?php endif; ?>
+            <img class="sbmoreview" id="sbmoreview-<?php echo $_product->getId() ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_images->getFile())->resize($_imgSize); ?>" alt="<?php echo $this->htmlEscape($_images->getLabel());?>" title="<?php $this->htmlEscape($_images->getLabel());?>"/>
+
+            <?php endif;?>
         <?php    endif; ?>
     <?php    endif; ?>

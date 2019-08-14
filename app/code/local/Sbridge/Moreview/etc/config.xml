@@ -3,14 +3,14 @@
 /**
 * @category   Sbridge
 * @package    Sbridge_Moreview
-* @author     ModuleCreator
+* @author     SetuBridge
 * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
 */
 -->
 <config>
     <modules>
         <Sbridge_Moreview>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
         </Sbridge_Moreview>
     </modules>
     <frontend>
@@ -75,45 +75,11 @@
         </layout>
     </adminhtml>
     <global>
-        <!--<models>
-            <moreview>
-                <class>Sbridge_Moreview_Model</class>
-                <resourceModel>moreview_mysql4</resourceModel>
-            </moreview>
-            <moreview_mysql4>
-                <class>Sbridge_Moreview_Model_Mysql4</class>
-                <entities>
-                    <moreview>
-                        <table>moreview</table>
-                    </moreview>
-                </entities>
-            </moreview_mysql4>
-        </models>-->
-        <!--<resources>
-            <moreview_setup>
-                <setup>
-                    <module>Sbridge_Moreview</module>
-                </setup>
-                <connection>
-                    <use>core_setup</use>
-                </connection>
-            </moreview_setup>
-            <moreview_write>
-                <connection>
-                    <use>core_write</use>
-                </connection>
-            </moreview_write>
-            <moreview_read>
-                <connection>
-                    <use>core_read</use>
-                </connection>
-            </moreview_read>
-        </resources>-->
-        <!--<blocks>
+        <blocks>
             <moreview>
                 <class>Sbridge_Moreview_Block</class>
             </moreview>
-        </blocks>-->
+        </blocks>
         <helpers>
             <moreview>
                 <class>Sbridge_Moreview_Helper</class>

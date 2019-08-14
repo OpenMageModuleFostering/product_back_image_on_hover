@@ -1,5 +1,4 @@
 <?php
-
 /**
 * Setubridge Technolabs
 * http://www.setubridge.com/
@@ -9,7 +8,6 @@
 ?>
 <?php
     $config = Mage::getStoreConfig('moreview_section/general_group/module_moreview');
-    if($config == 1):
     ?>
     <?php if($this->getItems()->getSize()): ?>
         <div class="block block-related">
@@ -34,7 +32,7 @@
                                         $imagesCount = Mage::getModel('catalog/product')->load($_item->getId())->getMediaGalleryImages();
                                         if(count($imagesCount) >1 ):
                                             $_images = $imagesCount->getItemByColumnValue('label', 'back');
-                                            if($_images)
+                                            if($_images && $config==1)
                                             {
                                                 $sb=1;
                                             ?>
@@ -94,4 +92,3 @@
             </script>
         </div>
         <?php endif ?>
-    <?php endif ?>

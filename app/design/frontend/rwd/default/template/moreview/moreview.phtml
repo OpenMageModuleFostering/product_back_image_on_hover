@@ -1,74 +1,34 @@
 <?php
-
-/**
-* Setubridge Technolabs
-* http://www.setubridge.com/
-* @author SetuBridge
-* @license http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
-**/
+    /**
+    * Setubridge Technolabs
+    * http://www.setubridge.com/
+    * @author SetuBridge
+    * @license http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+    **/
 ?>
-<h4><?php echo $this->__('Module List') ?></h4>
-            <?php
-                
-                /*
-                    This shows how to load specific fields from a record in the database.
-                    1) Note the load(15), this corresponds to saying "select * from table where table_id = 15"
-                    2) You can then just use the get(fieldname) to pull specific data from the table.
-                    3) If you have a field named news_id, then it becomes getNewsId, etc.
-                */
-                /*
-                $news = Mage::getModel('moreview/moreview')->load(15);
-                echo $news->getNewsId();
-                echo $news->getTitle();
-                echo $news->getContent();
-                echo $news->getStatus();
-                */
-                
-                /*
-                    This shows an alternate way of loading datas from a record using the database the "Magento Way" (using blocks and controller).
- 					Uncomment blocks in /app/code/local/Namespace/Module/controllers/IndexController.php if you want to use it.
-
-               */
-                /*
-                $object = $this->getMoreview();
-                echo 'id: '.$object['test_id'].'<br/>';
-				echo 'title: '.$object['title'].'<br/>';
-				echo 'content: '.$object['content'].'<br/>';
-				echo 'status: '.$object['status'].'<br/>';
-                */            
-            
-            
-                /*
-                    This shows how to load multiple rows in a collection and save a change to them.
-                    1) The setPageSize function will load only 5 records per page and you can set the current Page with the setCurPage function.
-                    2) The $collection->walk('save') allows you to save everything in the collection after all changes have been made.
-                */
-                /*
-                $i = 0;
-                
-                $collection = Mage::getModel('moreview/moreview')->getCollection();
-                $collection->setPageSize(5);
-                $collection->setCurPage(2);
-                $size = $collection->getSize();
-                $cnt = count($collection);
-                foreach ($collection as $item) {
-                    $i = $i+1;
-                    $item->setTitle($i);
-                    echo $item->getTitle();
-                }
-
-                $collection->walk('save');
-                */
-                
-                /*
-                    This shows how to load a single record and save a change.
-                    1) Note the setTitle, this corresponds to the table field name, title, and then you pass it the text to change.
-                    2) Call the save() function only on a single record.
-                */
-                /*
-                $object = Mage::getModel('moreview/moreview')->load(1);
-                $object->setTitle('This is a changed title');
-                $object->save();
-				*/
-
-            ?> 
+<?php 
+    $_helper = $this->helper('catalog/output');
+    $_product=$this->getProduct();
+    $imagesCount = Mage::getModel('catalog/product')->load($_product->getId())->getMediaGalleryImages();
+    if(count($imagesCount) >1 ):
+        $_images = $imagesCount->getItemByColumnValue('label', 'back');
+        if($_images):
+            $isResize=Mage::getStoreConfig('moreview_section/general_group/resize_moreview');
+            if($isResize):
+                $_imgSize=Mage::getStoreConfig('moreview_section/general_group/resize_moreview_width');
+            else:
+                $_imgSize = 210;
+            endif;
+            $moreviewhtmlid='sbmoreviewinnerhtml-'.$_product->getId();
+        ?>
+        <p id="<?php echo $moreviewhtmlid ?>">
+            <img class="sbmoreview" id="sbmoreview-<?php echo $_product->getId() ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_images->getFile())->resize($_imgSize); ?>" alt="<?php echo $this->htmlEscape($_images->getLabel());?>" title="<?php $this->htmlEscape($_images->getLabel());?>"/>
+        </p>
+        <script type="text/javascript">
+            var imgid="<?php echo "product-collection-image-".$_product->getId() ?>";
+            var data=$('<?Php echo $moreviewhtmlid ?>').innerHTML;
+            $(imgid).addClassName("sbview");
+            new Insertion.Before(imgid,data);
+        </script>
+        <?php endif;?>
+    <?php    endif; ?>

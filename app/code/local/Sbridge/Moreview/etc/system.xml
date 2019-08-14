@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 
+/**
+* @category   Sbridge
+* @package    Sbridge_Moreview
+* @author     SetuBridge
+* @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*/
+-->
 <config>
     <tabs>
         <sbridge_tab module="moreview" translate="label">
@@ -30,11 +38,45 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                        </module_moreview>                        
+                        </module_moreview>
+                        <override_listfile translate="label">
+                            <label>Override list.phtml?</label>
+                            <frontend_type>select</frontend_type>
+                            <comment>echo $this->getLayout()->createBlock('moreview/moreview')->setData('product',$_product)->setTemplate('moreview/backimage.phtml')->toHtml();
+                            If set no than This code add before image tag in your theme list.phtml
+                            
+                            </comment>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>moreview/source_overrideoption</frontend_model>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </override_listfile>
+                        <resize_moreview translate="label">
+                            <label>Resize Back Images?</label>
+                            <frontend_type>select</frontend_type>
+                          <!--  <comment>Default Resize images width 210px.</comment>-->
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </resize_moreview>
+                        <resize_moreview_width translate="label">
+                            <label>Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <depends><resize_moreview>1</resize_moreview></depends>
+                        </resize_moreview_width>                            
                         <short_desc_instructions translate="label">
                             <label>Cross sell</label>
                             <frontend_type>select</frontend_type>
-                            <sort_order>2</sort_order>
+                            <sort_order>5</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -43,7 +85,7 @@
                         <upsell_products translate="label">
                             <label>Up sell</label>
                             <frontend_type>select</frontend_type>
-                            <sort_order>3</sort_order>
+                            <sort_order>6</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -52,7 +94,7 @@
                         <related_products translate="label">
                             <label>Related Product</label>
                             <frontend_type>select</frontend_type>
-                            <sort_order>4</sort_order>
+                            <sort_order>7</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
