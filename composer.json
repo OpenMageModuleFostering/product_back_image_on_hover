@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/Product_Back_Image_On_Hover",
+    "name": "openmage-module-fostering\/product_back_image_on_hover",
     "type": "magento-module",
-    "license": "OSLv3.0",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "A Perfect solution to showcase product back image on category product listing pages.",
     "authors": [
